@@ -22,7 +22,7 @@ namespace Content.Server._Goobstation.Devil.Grip;
 
 public sealed class DevilGripSystem : EntitySystem
 {
-    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ChatSystem _chat = default!;

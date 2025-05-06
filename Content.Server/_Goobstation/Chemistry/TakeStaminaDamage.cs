@@ -36,7 +36,7 @@ public sealed partial class TakeStaminaDamage : EntityEffect
             scaledAmount = (int)(Amount * reagentArgs.Scale);
         }
 
-        args.EntityManager.System<StaminaSystem>()
+        args.EntityManager.System<SharedStaminaSystem>()
             .TakeStaminaDamage(args.TargetEntity, scaledAmount, visual: false, immediate: Immediate);
     }
 }

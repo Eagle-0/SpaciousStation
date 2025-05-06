@@ -26,7 +26,7 @@ public sealed class EtherealSystem : SharedEtherealSystem
     [Dependency] private readonly SharedPointLightSystem _light = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly StaminaSystem _staminaSystem = default!;
+    [Dependency] private readonly SharedStaminaSystem _staminaSystem = default!;
 
     public override void Initialize()
     {

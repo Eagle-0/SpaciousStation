@@ -26,7 +26,7 @@ namespace Content.Server.Damage.Systems
     {
         [Dependency] private readonly DamageExamineSystem _damageExamine = default!;
         [Dependency] private readonly SharedPopupSystem _popup = default!;
-        [Dependency] private readonly StaminaSystem _stamina = default!;
+        [Dependency] private readonly SharedStaminaSystem _stamina = default!;
 
         public override void Initialize()
         {

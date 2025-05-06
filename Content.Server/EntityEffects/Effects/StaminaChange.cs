@@ -9,7 +9,7 @@ namespace Content.Server.EntityEffects.Effects;
 ///</summary>
 public sealed partial class StaminaChange : EntityEffect
 {
-    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
         => Loc.GetString("reagent-effect-guidebook-stamina-change", ("chance", Probability), ("deltasign", MathF.Sign(Amount)), ("amount", MathF.Abs(Amount)));
 
@@ -22,6 +22,6 @@ public sealed partial class StaminaChange : EntityEffect
 
     public override void Effect(EntityEffectBaseArgs args)
     {
-        args.EntityManager.System<StaminaSystem>().TakeStaminaDamage(args.TargetEntity, Amount, visual: false);
+        args.EntityManager.System<SharedStaminaSystem>().TakeStaminaDamage(args.TargetEntity, Amount, visual: false);
     }
 }
