@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: FloorChasmEntity
   name: chasm
   description: You can't even see the bottom.
@@ -48,6 +48,8 @@
   - type: Tag
     tags:
     - HideContextMenu
+  - type: AcousticData # VDS. the fucking chasm ate my sound
+    absorption: 30
 
 - type: entity
   parent: FloorChasmEntity

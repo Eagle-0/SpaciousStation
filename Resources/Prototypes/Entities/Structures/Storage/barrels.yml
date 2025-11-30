@@ -68,8 +68,10 @@
   - type: DrainableSolution
     solution: barrel
   - type: ReagentTank
+  - type: AcousticData # VDS
+    absorption: 20
+    reflectRay: true
 
-# Closed
 - type: entity
   parent: BaseBarrel
   id: BlackBarrel

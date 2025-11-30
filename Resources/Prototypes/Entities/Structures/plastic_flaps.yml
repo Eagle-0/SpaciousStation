@@ -45,6 +45,8 @@
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.4
     sprintSpeedModifier: 0.4
+  - type: AcousticData # VDS
+    absorption: 20
 
 - type: entity
   id: PlasticFlapsClear
@@ -103,6 +105,9 @@
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.3
     sprintSpeedModifier: 0.3
+  - type: AcousticData # VDS
+    absorption: 20
+    reflectRay: true
 
 - type: entity
   id: PlasticFlapsAirtightOpaque
@@ -125,4 +130,6 @@
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.25
     sprintSpeedModifier: 0.25
-
+  - type: AcousticData # VDS
+    absorption: 20
+    reflectRay: true

@@ -40,6 +40,9 @@
     - type: Damageable
       damageContainer: StructuralInorganic
       damageModifierSet: Glass
+    - type: AcousticData # VDS
+      absorption: -10 # makes sense right
+      reflectRay: true
     - type: Destructible
       thresholds:
         - trigger:

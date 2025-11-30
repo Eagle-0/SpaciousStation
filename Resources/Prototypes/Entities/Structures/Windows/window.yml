@@ -91,6 +91,9 @@
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn
+  - type: AcousticData # VDS
+    absorption: 10
+    reflectRay: true
 
 - type: entity
   parent: Window
@@ -212,6 +215,9 @@
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn
+  - type: AcousticData # VDS
+    absorption: 6
+    reflectRay: true
 
 - type: entity
   id: WindowDirectionalRCDResistant

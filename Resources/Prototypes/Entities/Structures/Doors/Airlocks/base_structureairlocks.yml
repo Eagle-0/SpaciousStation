@@ -182,6 +182,9 @@
   - type: TwistedConstructionTarget
     replacementProto: CultDoor
     doAfterDelay: 10
+  - type: AcousticData # VDS
+    absorption: 10
+    reflectRay: true
   placement:
     mode: SnapgridCenter
 

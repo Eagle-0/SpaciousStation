@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseStructureDynamic
   id: SmartFridge
   name: SmartFridge
@@ -94,3 +94,6 @@
         Blunt: 5
     soundHit:
       collection: MetalThud
+  - type: AcousticData # VDS
+    absorption: 20
+    reflectRay: true

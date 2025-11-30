@@ -51,6 +51,9 @@
   - type: RadiationBlocker
     resistance: 1
   - type: BlockWeather
+  - type: AcousticData # VDS
+    absorption: 5
+    reflectRay: true
 
 - type: entity
   parent: BaseWall
@@ -1140,6 +1143,9 @@
   - type: IconSmooth
     key: woods
     base: wood
+  - type: AcousticData # VDS. wood absorb more!
+    absorption: 12
+    reflectRay: true
 
 - type: entity
   parent: BaseWall
@@ -1184,6 +1190,9 @@
   - type: Construction
     graph: WebStructures
     node: wall
+  - type: AcousticData # VDS. web sticky
+    absorption: 22
+    reflectRay: true
 
 
 # Lavalend Walls

@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseStructure
   id: BaseFenceMetal
   name: chain link fence
@@ -82,6 +82,8 @@
   - type: InteractionVerbs
     allowedVerbs:
     - Rattle
+  - type: AcousticData # VDS
+    absorption: 2
 
 - type: entity
   parent: BaseFenceMetal

@@ -173,6 +173,9 @@
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn
+  - type: AcousticData # VDS
+    absorption: 5
+    reflectRay: true
 
 - type: entity
   id: BaseSecureWindoor
