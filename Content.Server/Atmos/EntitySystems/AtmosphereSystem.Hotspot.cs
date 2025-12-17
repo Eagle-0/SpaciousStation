@@ -1,3 +1,26 @@
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Server.Atmos.Components;
 using Content.Server.Decals;
 using Content.Shared.Atmos;
@@ -137,33 +160,55 @@ namespace Content.Server.Atmos.EntitySystems
 
             var plasma = tile.Air.GetMoles(Gas.Plasma);
             var tritium = tile.Air.GetMoles(Gas.Tritium);
-            var puddleFlammability = tile.PuddleSolutionFlammability; // reagent fires
+
+            // Clamp effective flammability so super-dense puddles don't create heat death of the universe temperatures
+            var rawFlammability = (float)tile.PuddleSolutionFlammability;
+            var effectiveFlammability = Math.Min(rawFlammability, 20f);
+
+            // Use the higher of the exposed temp neighbor or the tile's own air temp.
+            // This ensures hot ambient gas ignites the puddle
+            var ignitionTemperature = Math.Max(exposedTemperature, tile.Air.Temperature);
 
             if (tile.Hotspot.Valid)
             {
                 if (soh)
                 {
-                    if (plasma > 0.5f || tritium > 0.5f || puddleFlammability > 0)
+                    if (plasma > 0.5f || tritium > 0.5f || rawFlammability > 0)
                     {
-                        if (tile.Hotspot.Temperature < exposedTemperature)
-                            tile.Hotspot.Temperature = exposedTemperature;
+                        if (tile.Hotspot.Temperature < ignitionTemperature)
+                            tile.Hotspot.Temperature = ignitionTemperature;
                         if (tile.Hotspot.Volume < exposedVolume)
                             tile.Hotspot.Volume = exposedVolume;
                     }
                 }
-                tile.Hotspot.Temperature = AddClampedTemperature(tile.Hotspot.Temperature, 5 * puddleFlammability, (float)(Atmospherics.T0C + 20 * Math.Pow(puddleFlammability, 2)));
+
+                // Linear scaling
+                tile.Hotspot.Temperature = AddClampedTemperature(
+                    tile.Hotspot.Temperature,
+                    10 * effectiveFlammability,
+                    (float)(Atmospherics.T0C + 100 * effectiveFlammability));
 
                 return;
             }
 
-            if ((exposedTemperature > Atmospherics.PlasmaMinimumBurnTemperature && (plasma > 0.5f || tritium > 0.5f)) || (puddleFlammability > 0 && exposedTemperature > 573.15 - 50 * puddleFlammability) )
+            // Ignition threshold
+            var ignitionThreshold = Math.Max(373.15f, 573.15f - (10 * effectiveFlammability));
+
+            if ((ignitionTemperature > Atmospherics.PlasmaMinimumBurnTemperature && (plasma > 0.5f || tritium > 0.5f))
+                || (rawFlammability > 0 && ignitionTemperature > ignitionThreshold) )
             {
                 if (sparkSourceUid.HasValue)
                     _adminLog.Add(LogType.Flammable, LogImpact.High, $"Heat/spark of {ToPrettyString(sparkSourceUid.Value)} caused atmos ignition of gas: {tile.Air.Temperature.ToString():temperature}K - {oxygen}mol Oxygen, {plasma}mol Plasma, {tritium}mol Tritium");
 
-                var temperature = exposedTemperature;
-                if(puddleFlammability > 0)
-                    temperature = AddClampedTemperature(temperature, 5 * puddleFlammability, (float)(Atmospherics.T0C + 20 * Math.Pow(puddleFlammability, 2)));
+                var temperature = ignitionTemperature;
+                if(rawFlammability > 0)
+                {
+                    temperature = AddClampedTemperature(
+                        temperature,
+                        10 * effectiveFlammability,
+                        (float)(Atmospherics.T0C + 100 * effectiveFlammability));
+                }
+
                 tile.Hotspot = new Hotspot
                 {
                     Volume = exposedVolume * 25f,
@@ -171,7 +216,7 @@ namespace Content.Server.Atmos.EntitySystems
                     SkippedFirstProcess = tile.CurrentCycle > gridAtmosphere.UpdateCounter,
                     Valid = true,
                     State = 1,
-                    Type = puddleFlammability > 0 ? HotspotType.Puddle : HotspotType.Gas
+                    Type = rawFlammability > 0 ? HotspotType.Puddle : HotspotType.Gas
                 };
 
                 AddActiveTile(gridAtmosphere, tile);
@@ -194,7 +239,9 @@ namespace Content.Server.Atmos.EntitySystems
             else
             {
                 var affected = tile.Air.RemoveVolume(tile.Hotspot.Volume);
-                affected.Temperature = MathF.Max(tile.Hotspot.Temperature, Atmospherics.T0C + 50 * tile.PuddleSolutionFlammability);
+
+                var effectiveFlammability = Math.Min((float)tile.PuddleSolutionFlammability, 20f);
+                affected.Temperature = MathF.Max(tile.Hotspot.Temperature, Atmospherics.T0C + 25 * effectiveFlammability);
                 React(affected, tile);
                 tile.Hotspot.Temperature = affected.Temperature;
                 tile.Hotspot.Volume = affected.ReactionResults[GasReaction.Fire] * Atmospherics.FireGrowthRate;
