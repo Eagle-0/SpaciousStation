@@ -848,12 +848,16 @@ namespace Content.Shared.Chemistry.Components
         public int GetSolutionFlammability(IPrototypeManager? protoMan)
         {
             IoCManager.Resolve(ref protoMan);
+
+            if (Volume <= FixedPoint2.Zero)
+                return 0;
+
             float solutionFlammability = 0;
             foreach (var (reagent, quantity) in Contents)
             {
                 solutionFlammability += protoMan.Index<ReagentPrototype>(reagent.Prototype).Flammability * (float)quantity;
             }
-            return (int)MathF.Floor(solutionFlammability);
+            return (int)MathF.Floor(solutionFlammability / (float)Volume);
         }
 
         public void BurnFlammableReagents(float fraction, IPrototypeManager? protoMan)
