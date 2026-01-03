@@ -4,6 +4,7 @@
   abstract: true
   components:
   - type: MobMover
+  - type: TileMovement
   - type: Mech
   - type: MechAir
   - type: AirFilter
