@@ -125,3 +125,12 @@
   weights:
     EscapeThiefShuttleObjective: 1
 #Changeling, crew, wizard, when you code it...
+
+- type: weightedRandom
+  id: ConspiratorObjectiveGroup # if you want to add another objective, feel free
+  weights:
+    ConspiratorLibertyObjective: 1
+    ConspiratorCommieObjective: 1
+    ConspiratorAlienObjective: 1
+    ConspiratorHumanObjective: 1
+    ConspiratorMidCommandObjective: 1

@@ -449,3 +449,27 @@
     #      orGroup: puddleMess
     - id: SmugglerStashVariationPass
       prob: 0.90
+
+# Spacious
+- type: entity
+  parent: BaseGameRule
+  id: Conspirators
+  components:
+  - type: GameRule
+    minPlayers: 5 # minimum of 4 conspirators
+  - type: ConspiratorRule
+  - type: AntagSelection
+    selectionTime: PrePlayerSpawn
+    definitions:
+    - prefRoles: [ Conspirator ]
+      min: 1
+      max: 5
+      playerRatio: 4
+      briefing:
+        text: conspirator-role-greeting
+        color: "#5f1502"
+        sound: /Audio/Misc/Conspirator.ogg
+      components:
+      - type: Conspirator
+      mindRoles:
+      - MindRoleConspirator

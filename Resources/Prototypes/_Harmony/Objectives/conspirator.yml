@@ -1,0 +1,68 @@
+- type: entity
+  abstract: true
+  parent: BaseFreeObjective
+  id: BaseConspiratorObjective
+  components:
+  - type: Objective
+    issuer: conspirator-objective-issuer
+    difficulty: 0 # uses own system for assignment
+  - type: RoleRequirement
+    roles:
+      mindRoles:
+      - ConspiratorRole
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorLibertyObjective
+  name: Initiate the Great Libertarian Revolution
+  description: Free the People from the shackles of corporate jingoist ear-radio slavery
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/stunprod.rsi
+      state: stunprod_off
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorCommieObjective
+  name: Initiate the Great Communist Revolution
+  description: Unite the workers of the station and create a glorious egalitarian utopia
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/stunprod.rsi
+      state: stunprod_off
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorAlienObjective
+  name: Secure the station for Our Benefactors
+  description: Your hour has come again. My employers require this station to be in the control of trustworthy individuals such as yourself. Get to it, quickly; I'll see you up ahead.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/stunprod.rsi
+      state: stunprod_off
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorHumanObjective
+  name: Maintain the Humanitarian Agenda
+  description: The Xeno scum residing on the station have gotten too comfortable. Remind them of their place - by force, if necessary
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/stunprod.rsi
+      state: stunprod_off
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorMidCommandObjective
+  name: Ensure Cooperation with Mid Command
+  description:  By bribery or by force, ensure the current Administration will not interfere with our dealings. May Mid Command reign ten thousand years.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/stunprod.rsi
+      state: stunprod_off
+
