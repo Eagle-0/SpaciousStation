@@ -139,7 +139,7 @@
   components:
   - type: LightBulb
     bulb: Bulb
-    color: "#EEEEFF"
+    color: "#e6fff7"
     lightEnergy: 1
     lightRadius: 8
     lightSoftness: 1
@@ -245,6 +245,7 @@
   description: An aging light fixture.
   components:
   - type: LightBulb
+    color: "#869479" # old fluorescents are yellower-4500K temp
     lightEnergy: 0.6
     lightRadius: 10
     lightSoftness: 1
@@ -267,7 +268,7 @@
   id: LedLightTube
   components:
   - type: LightBulb
-    color: "#EEEEFF"
+    color: "#e6fff7"
     lightEnergy: 1
     lightRadius: 15
     lightSoftness: 0.9
