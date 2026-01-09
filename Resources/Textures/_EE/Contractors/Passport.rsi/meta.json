@@ -61,6 +61,12 @@
         {
             "name": "passport_qiimaeru_open"
         },
+		{
+		"name": "passport_syndie_open"
+		},
+		{
+		"name": "passport_syndie_closed"
+		},
         {
             "name": "passport_species_human"
         },

@@ -48,7 +48,8 @@
   copyright: "leonardodabepis on discord"
   source: "https://www.youtube.com/@leonardodabepis"
 
-- files: ["uristforever.webp"]
-  license: "CC-BY-SA-3.0"
-  copyright: "aaronswoop on github"
-  source: "https://github.com/Eagle-0/SpaciousStation"z
+ # commented out until eagle makes it work
+- #files: ["uristforever.webp"]
+  #license: "CC-BY-SA-3.0"
+  #copyright: "aaronswoop on github"
+  #source: "https://github.com/Eagle-0/SpaciousStation"
