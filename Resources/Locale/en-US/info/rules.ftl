@@ -1,8 +1,8 @@
 ﻿# Rules
 
-ui-rules-header = Official Server Rules
-ui-rules-accept = I have read and agree to follow the rules
-ui-rules-wait = The accept button will be enabled after {$time} seconds.
+ui-rules-header = The 10 Spacious Stratagems
+ui-rules-accept = Shut up and let me play already fat chud
+ui-rules-wait = You will perish in {$time} seconds.
 
-ui-rules-button-home = Home
-ui-rules-button-back = Back
+ui-rules-button-home = GET ME OUT OF HERE!!!!
+ui-rules-button-back = AAHHHHHHH
