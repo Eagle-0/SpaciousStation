@@ -31,3 +31,6 @@ nationality_description_goldendeep = The Golden Deep is a growing nation state o
 
 nationality_name_qiimaeruan = Qiimaeruan
 nationality_description_qiimaeruan = The Qiimaeru Constellation is a nation governing a handful of star systems, named after the system in which it was originally founded. Its population is predominantly Xelthian—a result of the Constellation only recently establishing contact with other species, making it effectively their home territory
+
+nationality_name_syndie = Syndicate
+nationality_description_syndie = The Spinward Syndicate is a union of corporations who have banded together to oppose Nanotrasen's economic domination of the Spinward system and to break their monopoly on the newly discovered resource there: Phoron; coloquially known as "Plasma".

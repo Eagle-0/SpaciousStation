@@ -80,3 +80,22 @@
   descriptionKey: employer_description_eastorioncompany
   primaryColour: "#ff8a13"
   secondaryColour: "#336b83"
+
+- type: employer
+  id: Cybersun
+  nameKey: employer_name_cybersun
+  descriptionKey: employer_description_cybersun
+  primaryColour: "#a82302"
+  secondaryColour: "#18041676"
+
+- type: employer
+  id: Gorlex
+  nameKey: employer_name_gorlex
+  descriptionKey: employer_description_gorlex
+  primaryColour: "#a82302"
+  secondaryColour: "#18041676"
+  requirements:
+  - !type:CharacterSpeciesRequirement
+    species:
+      - Human
+      - Reptilian

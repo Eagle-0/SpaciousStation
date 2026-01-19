@@ -107,3 +107,15 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Xelthia # Consider not making this exclusive later, actually
+
+- type: nationality
+  id: Syndie
+  nameKey: nationality_name_syndie
+  descriptionKey: nationality_description_syndie
+  passportPrototype: SyndiePassport
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+        - Human
+        - Reptilian

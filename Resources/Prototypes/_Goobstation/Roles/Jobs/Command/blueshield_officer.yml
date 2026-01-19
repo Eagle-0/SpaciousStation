@@ -1,7 +1,7 @@
 - type: job
   id: BlueshieldOfficer
-  name: Blueshield Officer
-  description: "Act as a bodyguard and advisor for Command and CentCom VIPs."
+  name: Redshield Officer
+  description: "Act as a bodyguard and advisor for Command and HighComm Agents."
   playTimeTracker: JobBlueshieldOfficer
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -24,7 +24,7 @@
         - BrittleBoneDisease
     - !type:CharacterEmployerRequirement
       employers:
-      - NanoTrasen # BSO works directly for centcomm, they are not a contractor.
+      - Gorlex # BSO works directly for centcomm, they are not a contractor.
   weight: 20
   startingGear: BlueshieldOfficerGear
   icon: "JobIconBlueshield"

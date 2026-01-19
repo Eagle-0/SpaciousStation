@@ -47,3 +47,11 @@ employer_description_pmcg = A coalition of security contractors, the Private Mil
 employer_name_eastorioncompany = East-Orion Company
 employer_name_eastorioncompany_command = East-Orion Company Command
 employer_description_eastorioncompany = A Nederlandic initiative to exploit an untapped market in 2157, the United East-Orion Company was an old idea made new. Rooted in tradition that went back centuries, two large agricultural corporations — the New-Nederic agricultural machinery manufacturer and the Farmer's Civil Union — came together under one banner to offer planet-honed skillsets to a growing number of corporate space stations.
+
+employer_name_cybersun = Cybersun
+employer_name_cybersun_command = High Command
+employer_description_cybersun = Known for their excellent employee benefits, history of charitable donation, and outstanding customer service, Cybersun is widely considered to be one of the Sector’s most employee-friendly corporations. Under these carefully curated optics, however, lies the true Cybersun: a ruthless, militant, and domineering megacorporation that forms the brains behind the largest criminal enterprise in the sector, and the center of a corporate conspiracy decades in the making.
+
+employer_name_gorlex = Gorlex Marauders
+employer_name_gorlex_command = High Command
+employer_description_gorlex = One of the most feared and effective pirate outfits in the sector, Gorlex is a name synonymous with three things: efficiency, competence, and absolute ruthlessness. Unlike most raiders across Spinward, Gorlex are not an anarchic warband of cutthroats. Instead, Gorlex operates far more similarly to a high-end PMC or mercenary company, with a defined chain of command, rigorous training standards, and a strict honor code for its warriors.

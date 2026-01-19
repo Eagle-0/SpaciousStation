@@ -457,14 +457,16 @@
   components:
   - type: GameRule
     minPlayers: 5 # minimum of 4 conspirators
+    cancelPresetOnTooFewPlayers: false
   - type: ConspiratorRule
   - type: AntagSelection
-    selectionTime: PrePlayerSpawn
+    selectionTime: PostPlayerSpawn
     definitions:
     - prefRoles: [ Conspirator ]
       min: 1
       max: 5
       playerRatio: 4
+      lateJoinAdditional: true
       briefing:
         text: conspirator-role-greeting
         color: "#5f1502"

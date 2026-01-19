@@ -78,6 +78,44 @@
           - Solarian
 
 - type: entity
+  name: Spinward Syndicate passport
+  parent: BasePassport
+  id: SyndiePassport
+  components:
+    - type: Sprite
+      sprite: _EE/Contractors/Passport.rsi
+      layers:
+      - state: passport_syndie_open
+      - state: passport_species_human
+    - type: ExtendDescription
+      descriptionList:
+      - description: "syndie_view_syndie_passport"
+        fontSize: 12
+        color: "#f36b11"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterNationalityRequirement
+          nationalities:
+          - Syndie
+      - description: "cyber_view_syndie_passport"
+        fontSize: 12
+        color: "#e6e216"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterEmployerRequirement
+          employers:
+          - Cybersun
+      - description: "gorlex_view_syndie_passport"
+        fontSize: 12
+        color: "#e6e216"
+        requireDetailRange: true
+        requirements:
+        - !type:CharacterEmployerRequirement
+          employers:
+          - Gorlex
+      
+
+- type: entity
   name: Republic of Elyra passport
   parent: BasePassport
   id: ElyranPassport

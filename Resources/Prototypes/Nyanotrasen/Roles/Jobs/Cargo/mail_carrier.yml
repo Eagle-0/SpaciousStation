@@ -14,7 +14,7 @@
     - !type:CharacterEmployerRequirement
       employers:
       - OrionExpress
-      - NanoTrasen
+      - Cybersun
 
 - type: startingGear
   id: MailCarrierGear

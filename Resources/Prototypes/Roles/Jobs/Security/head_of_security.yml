@@ -15,9 +15,7 @@
     - BrittleBoneDisease
   - !type:CharacterEmployerRequirement
     employers:
-    - ZavodskoiInterstellar
-    - PMCG
-    - NanoTrasen
+    - Gorlex
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"

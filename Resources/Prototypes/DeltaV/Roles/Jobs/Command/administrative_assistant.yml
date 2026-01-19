@@ -30,7 +30,7 @@
     - !type:CharacterEmployerRequirement
       employers:
       - IdrisIncorporated
-      - NanoTrasen
+      - Cybersun
   startingGear: AdminAssistantGear
   icon: "JobIconAdminAssitant"
   supervisors: job-supervisors-command

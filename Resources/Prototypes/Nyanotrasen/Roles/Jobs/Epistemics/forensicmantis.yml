@@ -24,7 +24,7 @@
             - Pacifist
     - !type:CharacterEmployerRequirement
       employers:
-      - NanoTrasen
+      - Cybersun
       - ZengHuPharmaceuticals
     - !type:CharacterItemGroupRequirement
       group: TraitsCasterType
