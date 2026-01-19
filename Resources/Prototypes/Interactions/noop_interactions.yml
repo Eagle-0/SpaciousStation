@@ -16,6 +16,23 @@
     !type:NoOpAction
 
 - type: Interaction
+  id: LaughAt
+  parent: BaseGlobal
+  priority: 4
+  requiresHands: false
+  requiresCanInteract: false
+  contactInteraction: false
+  allowSelfInteract: false
+  icon: /Textures/Interface/Actions/eyeopen.png
+  range: {max: 20}
+  effectSuccess:
+    popup: Obvious
+    sound: {collection: MaleCackle}
+    soundPerceivedByOthers: true # HAHAHAHHAHAHAHAHAH
+  action:
+    !type:NoOpAction
+
+- type: Interaction
   id: WaveAt
   parent: [BaseHands, BaseGlobal]
   priority: 3

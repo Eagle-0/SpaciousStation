@@ -40,6 +40,8 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
+    Cackle:
+      collection: MaleCackle
 
 - type: emoteSounds
   id: FemaleHuman
@@ -682,6 +684,10 @@
       collection: IPCWhirrs
       params:
         variation: 0
+    Cackle:
+      path: /Audio/Voice/Silicon/syndieborg_laugh.ogg
+      params:
+        variation: 0.125
 
 - type: emoteSounds
   id: UnisexSilicon

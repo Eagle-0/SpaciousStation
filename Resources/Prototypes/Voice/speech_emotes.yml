@@ -499,3 +499,21 @@
   chatMessages: [ wurble ]
   chatTriggers:
   - wurble
+
+- type: emote
+  id: Cackle
+  name: chat-emote-name-cackle
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    components:
+    - Vocal
+  chatMessages: ["chat-emote-msg-cackle"]
+  chatTriggers:
+  - cackle
+  - cackles
+  - cackling
+  - cackled
+  - laughs evilly
+  - evil laugh
+  - laughed evilly

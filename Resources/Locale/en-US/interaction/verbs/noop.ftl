@@ -4,11 +4,23 @@ interaction-LookAt-success-self-popup = You look at {THE($target)}.
 interaction-LookAt-success-target-popup = You feel {THE($user)} looking at you...
 interaction-LookAt-success-others-popup = {THE($user)} looks at {THE($target)}.
 
+interaction-LaughAt-name = Laugh at
+interaction-LaughAt-description = AHHAHAHAHHAH!!!
+interaction-LaughAt-success-self-popup = You laugh uncontrollably at {THE($target)}!
+interaction-LaughAt-success-target-popup = {THE($user)} laughs at you!
+interaction-LaughAt-success-others-popup = {THE($user)} laughs at {THE($target)}.
+
 interaction-Hug-name = Hug
 interaction-Hug-description = A hug a day keeps the psychological horrors beyond your comprehension away.
 interaction-Hug-success-self-popup = You hug {THE($target)}.
 interaction-Hug-success-target-popup = {THE($user)} hugs you.
 interaction-Hug-success-others-popup = {THE($user)} hugs {THE($target)}.
+
+interaction-Dap-name = Dap
+interaction-Dap-description = Dap my up my boy!
+interaction-Dap-success-self-popup = You dap up {THE($target)}.
+interaction-Dap-success-target-popup = {THE($user)} daps you up.
+interaction-Dap-success-others-popup = {THE($user)} daps {THE($target)} up.
 
 interaction-Pet-name = Pet
 interaction-Pet-description = Pet your co-worker to ease their stress.

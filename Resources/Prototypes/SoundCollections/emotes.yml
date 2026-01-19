@@ -119,3 +119,13 @@
   id: Wurble
   files:
   - /Audio/Voice/Shadowkin/wurble.ogg
+
+- type: soundCollection
+  id: MaleCackle
+  files:
+    - /Audio/Voice/Human/cackle_male_1.ogg
+    - /Audio/Voice/Human/cackle_male_2.ogg
+    - /Audio/Voice/Human/cackle_male_3.ogg
+    - /Audio/Voice/Human/cackle_male_4.ogg
+    - /Audio/Voice/Human/cackle_male_5.ogg
+    - /Audio/Voice/Human/cackle_male_6.ogg
