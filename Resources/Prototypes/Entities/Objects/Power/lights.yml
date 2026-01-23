@@ -232,7 +232,7 @@
   description: A light fixture.
   components:
   - type: LightBulb
-    color: "#b0d99a" # 5000K color temp
+    color: "#cfedb7" # 5000K color temp
     lightEnergy: 0.8
     lightRadius: 10
     lightSoftness: 1

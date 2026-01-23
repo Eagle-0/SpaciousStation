@@ -36,7 +36,7 @@
         acts: ["Destruction"]
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/firelock.rsi
-    snapCardinals: true
+    snapCardinals: false
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
